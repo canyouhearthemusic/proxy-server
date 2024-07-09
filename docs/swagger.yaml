@@ -1,0 +1,56 @@
+definitions:
+  models.ProxyRequest:
+    properties:
+      headers:
+        additionalProperties:
+          type: string
+        type: object
+      method:
+        default: GET
+        type: string
+      url:
+        type: string
+    type: object
+  models.ProxyResponse:
+    properties:
+      headers:
+        additionalProperties:
+          type: string
+        type: object
+      id:
+        type: string
+      length:
+        type: integer
+      status:
+        type: integer
+    type: object
+host: localhost:8080
+info:
+  contact: {}
+  description: This is a sample server celler server.
+  title: Swagger Example API
+  version: "1.0"
+paths:
+  /request:
+    post:
+      consumes:
+      - application/json
+      description: This endpoint proxies a request.
+      parameters:
+      - description: Proxy request
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/models.ProxyRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.ProxyResponse'
+      summary: Handles the proxy request
+      tags:
+      - proxy
+swagger: "2.0"

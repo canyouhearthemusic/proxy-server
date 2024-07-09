@@ -3,12 +3,19 @@ package main
 import (
 	"net/http"
 
+	_ "github.com/canyouhearthemusic/proxy-server/docs"
 	"github.com/canyouhearthemusic/proxy-server/internal/routes"
 	"github.com/go-chi/chi/v5"
 	"github.com/go-chi/chi/v5/middleware"
 	"github.com/go-chi/render"
 	log "github.com/sirupsen/logrus"
 )
+
+// @title           Swagger Example API
+// @version         1.0
+// @description     This is a sample server celler server.
+
+// @host      localhost:8080
 
 func main() {
 	log.Println("Starting App...")

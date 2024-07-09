@@ -6,6 +6,7 @@ import (
 	"net/http"
 	"sync"
 
+	_ "github.com/canyouhearthemusic/proxy-server/docs"
 	"github.com/canyouhearthemusic/proxy-server/internal/models"
 	"github.com/canyouhearthemusic/proxy-server/pkg/utils"
 	"github.com/go-chi/render"
@@ -16,6 +17,15 @@ var (
 	requests sync.Map
 )
 
+// HandleProxyRequest godoc
+// @Summary Handles the proxy request
+// @Description This endpoint proxies a request.
+// @Tags proxy
+// @Accept  json
+// @Produce  json
+// @Param request body models.ProxyRequest true "Proxy request"
+// @Success 200 {object} models.ProxyResponse
+// @Router /request [post]
 func HandleProxyRequest(w http.ResponseWriter, r *http.Request) {
 	var proxyReq models.ProxyRequest
 	if err := json.NewDecoder(r.Body).Decode(&proxyReq); err != nil {
