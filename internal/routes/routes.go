@@ -10,6 +10,6 @@ func RegisterRoutes(r *chi.Mux) {
 	r.Post("/request", handlers.HandleProxyRequest)
 
 	r.Get("/swagger/*", httpSwagger.Handler(
-		httpSwagger.URL("http://localhost:8080/swagger/doc.json"),
+		httpSwagger.URL("https://proxy-server-u78h.onrender.com/swagger/doc.json"),
 	))
 }

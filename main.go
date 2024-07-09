@@ -15,7 +15,7 @@ import (
 // @version         1.0
 // @description     This is a sample server celler server.
 
-// @host      localhost:8080
+// @host      https://proxy-server-u78h.onrender.com
 
 func main() {
 	log.Println("Starting App...")

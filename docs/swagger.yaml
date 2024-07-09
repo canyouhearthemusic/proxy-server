@@ -24,7 +24,7 @@ definitions:
       status:
         type: integer
     type: object
-host: localhost:8080
+host: https://proxy-server-u78h.onrender.com
 info:
   contact: {}
   description: This is a sample server celler server.
